@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lunaris.vayu"
+    android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".VayuAiApplication"
+        android:label="Vayu AI Teacher"
+        android:icon="@mipmap/ic_vayu_ai"
+        android:roundIcon="@mipmap/ic_vayu_ai"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+        android:persistent="true"
+        android:directBootAware="true">
+
+        <!-- Floating Glassmorphism System Window Service -->
+        <service
+            android:name=".VayuOverlayService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse" />
+
+        <!-- Power Key & AI Broadcast Receiver -->
+        <receiver
+            android:name=".ActionKeyReceiver"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="com.lunaris.vayu.ACTION_POWER_GESTURE" />
+                <action android:name="com.vayu.ai.ACTION_TEACHER_RESPONSE" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
+

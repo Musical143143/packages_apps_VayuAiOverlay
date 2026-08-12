@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="#E00F0F0F"
+    android:elevation="12dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Lottie Animated AI Visualizer -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_ai_anim"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/vayu_ai_glow" />
+
+    <TextView
+        android:id="@+id/tv_ai_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Vayu AI is listening..."
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+</LinearLayout>

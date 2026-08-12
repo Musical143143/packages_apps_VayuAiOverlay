@@ -1,0 +1,12 @@
+android_app {
+    name: "VayuAiOverlay",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+    static_libs: [
+         "lottie", // Includes prebuilt Lottie Library
+        "androidx.annotation_annotation",
+    ],
+}
